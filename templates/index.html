@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swell Wave Data</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-3">Swell Wave Data</h2>
+
+        <div class="mb-4">
+            <h4>Location</h4>
+            <p id="locationInfo">Loading location...</p>
+        </div>
+
+        <!-- Current Swell Table -->
+        <div class="mb-4">
+            <h4>Current Swell</h4>
+            <p id="locationInfo"></p>
+            <table class="table table-striped" id="currentSwellTable">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Wave Height (m)</th>
+                        <th>Wave Direction (°)</th>
+                        <th>Wave Period (s)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Current swell data will be populated here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Hourly Swell Line Charts -->
+        <div>
+            <h4>Hourly Swell Wave Height</h4>
+            <div class="chart-container">
+                <canvas id="hourlyWaveHeightChart"></canvas>
+            </div>
+            
+        </div>
+
+        <div class="mt-4">
+            <h4>Hourly Swell Wave Direction</h4>
+            <div class="chart-container">
+                <canvas id="hourlyWaveDirectionChart"></canvas>
+            </div>
+            
+        </div>
+
+        <div class="mt-4">
+            <h4>Hourly Swell Wave Period</h4>
+            <div class="chart-container">
+                <canvas id="hourlyWavePeriodChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

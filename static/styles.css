@@ -1,0 +1,4 @@
+.chart-container {
+    width: 650px;
+    overflow-x: auto; /* Enables horizontal scrolling */
+}
